@@ -1,5 +1,5 @@
 from app import app
-from setting import WEBHOOK_SECRET_KEY
+from settings import WEBHOOK_SECRET_KEY
 from utils import is_valid_signature
 import git
 
