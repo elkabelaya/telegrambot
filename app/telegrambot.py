@@ -9,8 +9,8 @@ telepot.api._pools = {
 }
 telepot.api._onetime_pool_spec = (urllib3.ProxyManager, dict(proxy_url=proxy_url, num_pools=1, maxsize=1, retries=False, timeout=30))
 
-bot = telepot.Bot(app.TELEGRAM_API_KEY)
-bot.setWebhook("https://elkabelaya.pythonanywhere.com/telegrambot/{}".format(app.TELEGRAM_SECRET_KEY), max_connections=1)
+bot = telepot.Bot(settings.TELEGRAM_API_KEY)
+bot.setWebhook("https://elkabelaya.pythonanywhere.com/telegrambot/{}".format(settings.TELEGRAM_SECRET_KEY), max_connections=1)
 
 
 def telegram_webhook(json_data):

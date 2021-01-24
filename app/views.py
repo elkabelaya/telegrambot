@@ -20,7 +20,7 @@ def update():
     else:
         return "Error", 401
 
-@app.route('/telegrambot/{}'.format(app.TELEGRAM_SECRET_KEY), methods=["POST"])
+@app.route('/telegrambot/{}'.format(settings.TELEGRAM_SECRET_KEY), methods=["POST"])
 def telegram_webhook():
     telegrambot.telegram_webhook(request.get_json())
     return "OK"
