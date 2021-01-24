@@ -6,7 +6,7 @@ import git
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello"
+    return "Hello!"
 
 @app.route('/update_repo/', methods=["POST"])
 def update():
