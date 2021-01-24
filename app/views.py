@@ -8,7 +8,7 @@ def index():
 
 @app.route('/update_repo/', methods=["POST"])
 def update():
-    repo = git.Repo('/var/www/sites/mysite')
+    repo = git.Repo('/home/elkabelaya/mysite')
     origin = repo.remotes.origin
     origin.pull()
     return "OK"
