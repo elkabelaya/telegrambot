@@ -7,8 +7,8 @@ def index():
     return "Hello, World!!"
 
 @app.route('/update_repo/', methods=["POST"])
-def update(request):
-    repo = git.Repo("elkabelaya.pythonanywhere.com/")
+def update():
+    repo = git.Repo('/var/www/sites/mysite')
     origin = repo.remotes.origin
     origin.pull()
     return "OK"
