@@ -1,6 +1,7 @@
 from app import app
 from app import utils
 from app import settings
+from app import telegrambot
 import git
 from flask import request
 
@@ -18,3 +19,8 @@ def update():
         return "OK"
     else:
         return "Error", 401
+
+@app.route('/telegrambot/{}'.format(app.TELEGRAM_SECRET_KEY), methods=["POST"])
+def telegram_webhook():
+    telegrambot.telegram_webhook(request.get_json())
+    return "OK"
