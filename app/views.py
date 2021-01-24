@@ -4,11 +4,10 @@ import git
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!!!"
+    return "Hello"
 
 @app.route('/update_repo/', methods=["POST"])
 def update():
-    repo = git.Repo('/home/elkabelaya/mysite/')
-    origin = repo.remotes.origin
-    origin.pull()
+    repo = git.Git('mysite')
+    repo.pull('origin', 'main')
     return "OK"
